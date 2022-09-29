@@ -38,18 +38,17 @@ Para cada vértice, deve-se ter os seguintes dados:
 - nome do local: texto
 - tipo do local: texto (acadêmico, comercial, lazer, etc)
 
-Além disso, a partir do grafo criado, seu programa deve permitir:
-a) Verificar se dois vértices informados são adjacentes
-b) Verificar se existe um laço a partir da leitura de um vértice
-
-c)  Verificar se existe e exibir o caminho a partir da leitura de dois vértices
-d) Verificar se existe e exibir o comprimento dado um ciclo
-e) Criar novas arestas
-f) Remover arestas
-g) Tornar o grafo ponderado
-h) Verificar se um dado grafo é subgrafo
-i) Verificar se o grafo é completo
-j) Calcular o custo do caminho entre dois vértices informados
+**Além disso, a partir do grafo criado, seu programa deve permitir:**<p>
+a) Verificar se dois vértices informados são adjacentes <br>
+b) Verificar se existe um laço a partir da leitura de um vértice<br>
+c)  Verificar se existe e exibir o caminho a partir da leitura de dois vértices<br>
+d) Verificar se existe e exibir o comprimento dado um ciclo<br>
+e) Criar novas arestas<br>
+f) Remover arestas<br>
+g) Tornar o grafo ponderado<br>
+h) Verificar se um dado grafo é subgrafo<br>
+i) Verificar se o grafo é completo<br>
+j) Calcular o custo do caminho entre dois vértices informados<br>
 
 Importante:
 - Todas as leituras de dados precisam ser validadas.
