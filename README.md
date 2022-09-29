@@ -29,9 +29,10 @@ deve ser um dígrafo.
 
 **3)** Para o grafo criado em 1), calcule o grau de cada vértice.
 
-
-
+![alt text](https://github.com/Kamarguera/teoriadosgrafosn1/blob/main/mapafapa.png?raw=true)
 https://github.com/Kamarguera/teoriadosgrafosn1/blob/main/mapafapa.png
+
+
 
 
 
