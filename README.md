@@ -38,7 +38,7 @@ Para cada vértice, deve-se ter os seguintes dados:
 - nome do local: texto
 - tipo do local: texto (acadêmico, comercial, lazer, etc)
 
-Além disso, a partir do grafo criado, seu programa deve permitir:<br>
+Além disso, a partir do grafo criado, seu programa deve permitir:<p>
 a) Verificar se dois vértices informados são adjacentes <br>
 b) Verificar se existe um laço a partir da leitura de um vértice<br>
 c)  Verificar se existe e exibir o caminho a partir da leitura de dois vértices<br>
