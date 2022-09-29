@@ -25,7 +25,16 @@ deve ser um dígrafo.
 - nome do local: texto
 - tipo do local: texto (acadêmico, comercial, lazer, etc)
 
+
+
 **3)** Para o grafo criado em 1), calcule o grau de cada vértice.
+
+
+
+https://github.com/Kamarguera/teoriadosgrafosn1/blob/main/mapafapa.png
+
+
+
 ___
 ### <center>Codificação</center>
 
