@@ -29,12 +29,6 @@ deve ser um dígrafo.
 ___
 ### <center>Codificação</center>
 
-<style type="text/css">
-    ol { list-style-type: LOWER-alpha; }
-</style>
- 
-<ol type="B">
-
 
 
 Usando a linguagem de sua preferência, crie um programa que permita a criação de um grafo a partir
