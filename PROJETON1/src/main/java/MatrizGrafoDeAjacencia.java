@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
-public class Represent_Graph_Adjacency_Matrix {
+public class MatrizGrafoDeAjacencia {
     private final int vertices;
     public int[][] adjacency_matrix;
 
-    public Represent_Graph_Adjacency_Matrix(int v) {
+    public MatrizGrafoDeAjacencia(int v) {
         vertices = v;
         adjacency_matrix = new int[vertices + 1][vertices + 1];
     }

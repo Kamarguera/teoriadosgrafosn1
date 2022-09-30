@@ -6,14 +6,14 @@ public class Main {
     public static void main(String args[]) {
         int v, e, count = 1, to = 0, from = 0;
         Scanner sc = new Scanner(System.in);
-        Represent_Graph_Adjacency_Matrix graph;
+        MatrizGrafoDeAjacencia graph;
         try {
             System.out.println("Enter the number of vertices: ");
             v = sc.nextInt();
             System.out.println("Enter the number of edges: ");
             e = sc.nextInt();
 
-            graph = new Represent_Graph_Adjacency_Matrix(v);
+            graph = new MatrizGrafoDeAjacencia(v);
 
             System.out.println("Enter the edges: <to> <from>");
             while (count <= e) {
