@@ -33,7 +33,7 @@ public class Main {
             for (int i = 1; i <= v; i++) {
                 System.out.print(i + " ");
                 for (int j = 1; j <= v; j++)
-                    System.out.print(graph.getEdge(i, j) + " ");
+                    System.out.print(graph.getAresta(i, j) + " ");
                 System.out.println();
             }
 
