@@ -9,4 +9,20 @@ public class Vertice {
         this.nomeDoLocal = nomeDoLocal;
         this.tipoDoLocal = tipoDoLocal;
     }
+
+    public Vertice() {
+
+    }
+
+    public int getCodigoDoLocal() {
+        return codigoDoLocal;
+    }
+
+    public String getNomeDoLocal() {
+        return nomeDoLocal;
+    }
+
+    public String getTipoDoLocal() {
+        return tipoDoLocal;
+    }
 }

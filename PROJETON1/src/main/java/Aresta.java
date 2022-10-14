@@ -1,19 +1,49 @@
-public class Aresta {
+public class Aresta extends Vertice {
 
     private final int vertices;
     public int[][] arestas;
 
 
+
     public Aresta(int numerodeVertices) {
+        super();
         vertices = numerodeVertices;
         arestas = new int[vertices + 1][vertices + 1];
 
+    }
+
+    public void removeAresta(int to, int from) {
+        try {
+            arestas[to][from] = 0;
+//            System.out.println(to + " " + from + " " + 1);
+        } catch (ArrayIndexOutOfBoundsException index) {
+            System.out.println("The vertices does not exists");
+        }
+    }
+
+
+    public void removePrimeiraArestaAdjacente(int v, int n) {
+// Retorna a próxima aresta que o vértice v participa ou
+// null se a lista de adjacência de v estiver no fim
+        if (verificaSeVerticeSeConectaAAlgum(v, n)) {
+
+
+            for (int i = v; i <= n; i++)
+                if (getAresta(v, i) == 1) {
+                    removeAresta(v, i);
+
+                    System.out.println("removida aresta " + " " + v + " " + i);
+                    break;
+                }
+
+        }
     }
 
 
     public void criaAresta(int to, int from) {
         try {
             arestas[to][from] = 1;
+//            System.out.println(to + " " + from + " " + 1);
         } catch (ArrayIndexOutOfBoundsException index) {
             System.out.println("The vertices does not exists");
         }
@@ -28,6 +58,11 @@ public class Aresta {
         return -1;
     }
 
+    public int getAresta2(int to, int from) {
+        return arestas[to][from];
+
+    }
+
     Boolean verificaAdjacencia(int vertice1, int vertice2, int numerodeVertices) {
 
         boolean verticeAdjacente = false;
@@ -35,6 +70,10 @@ public class Aresta {
         for (int i = 1; i <= numerodeVertices; i++) {
             for (int j = 1; j <= numerodeVertices; j++) {
                 verticeAdjacente = getAresta(vertice1, vertice2) == 1;
+
+                if (arestas[i][j] == 1) {
+                    System.out.printf("caminho que passou: %d\n", j);
+                }
             }
 
         }
@@ -42,20 +81,98 @@ public class Aresta {
         return verticeAdjacente;
     }
 
+    int verificaAdjacenciaRetornandoCaminho(int vertice1, int vertice2, int numerodeVertices) {
 
-    public String exibirCaminhoAPartirDeDoisVertices(int vertice1,
-                                                     int vertice2,
-                                                     int numerodeVertices) {
+        int verticeAdjacente = 0;
+
+        for (int i = 1; i <= numerodeVertices; i++)
+            for (int j = 1; j <= numerodeVertices; j++)
+                if (getAresta2(vertice1, vertice2) == 1) {
+                    verticeAdjacente = vertice2;
+//                    System.out.println(" vertice1: " + vertice1 + " vertice2: " + vertice2);
+
+                }
 
 
-        for (int i = 1; i <= numerodeVertices; i++) {
-            for (int j = 1; j <= numerodeVertices; j++) {
+        return verticeAdjacente;
+    }
 
+
+    boolean verificaSeVerticeSeConectaAAlgum(int origem, int n) {
+
+        for (int i = origem; i <= n; i++) {
+            if (getAresta(origem, i) == 1) {
+//                System.out.printf("origem:%d, i:%d\n", origem, i);
+
+                return true;
+            }
+        }
+
+
+        return false;
+    }
+
+
+    int verificaAdjacenciaRetornandoCaminhoTest(int v1, int v2, int n) {
+
+/////////////////objetivo caminho do 1  até o 7///////////////////
+///////////////objetivo caminho do 1  até o 7///////////////////
+//        aresta.criaAresta(1, 3);
+//        aresta.criaAresta(3, 7);
+//
+//        aresta.criaAresta(1, 2);
+//        aresta.criaAresta(2, 4);
+//        aresta.criaAresta(4, 5);
+
+
+//        StringBuilder stringBuilder = new StringBuilder(100);
+//
+//        stringBuilder.append("Iniciou em " + v1);
+//
+//        System.out.println(stringBuilder);
+//
+//        stringBuilder.append(", " + j);
+//
+//        System.out.println(stringBuilder);
+
+
+        for (int i = v1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (getAresta2(i, j) == 1) {
+
+
+
+
+                    System.out.printf("%d,%d",
+                            i, j);
+
+
+
+                    i = j;
+                    System.out.println(" break");
+
+                    if (!verificaSeVerticeSeConectaAAlgum(j, n) && j != v2) {
+                        System.out.println(j);
+                        System.out.printf(
+                                "o vertice %d se conecta com outro vertice:%b\n"
+                                , j
+                                , verificaSeVerticeSeConectaAAlgum(j, n)
+                        );
+
+
+                        removePrimeiraArestaAdjacente(v1, n);
+                        i = 1;
+                        j = 1;
+                    }
+//                    break;
+                }
 
             }
+//            break;
 
         }
-        return null;
 
+
+        return 0;
     }
 }
