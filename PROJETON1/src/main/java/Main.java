@@ -37,7 +37,7 @@ public class Main {
 
             arestas = new Aresta(v);
 
-            System.out.println("Enter the edges: <to> <from>");
+            System.out.println("informe as arestas: <destino> <origem>");
             while (count <= e) {
                 to = sc.nextInt();
                 from = sc.nextInt();
@@ -60,7 +60,7 @@ public class Main {
                 System.out.println();
             }
                     System.out.println("Menu de Operações");
-                    System.out.println("(1)- Verificar se dois vertices sao adjacentes");
+                    System.out.println("(1) - Verificar se dois vertices sao adjacentes");
                     System.out.println("(2) - Verificar se existe um laço a partir da leitura de um vertice");
                     System.out.println("(3) - Verificar se existe um caminho a partir da leitura de dois vértices");
                     op = sc.nextInt();

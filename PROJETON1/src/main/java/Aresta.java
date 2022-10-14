@@ -3,7 +3,6 @@ public class Aresta extends Vertice {
     private final int vertices;
     public int[][] arestas;
 
-
     public Aresta(int numerodeVertices) {
         super();
         vertices = numerodeVertices;
@@ -19,7 +18,6 @@ public class Aresta extends Vertice {
             System.out.println("The vertices does not exists");
         }
     }
-
 
     public void removePrimeiraArestaAdjacente(int v, int n) {
 // Retorna a próxima aresta que o vértice v participa ou
@@ -38,13 +36,12 @@ public class Aresta extends Vertice {
         }
     }
 
-
     public void criaAresta(int to, int from) {
         try {
             arestas[to][from] = 1;
 //            System.out.println(to + " " + from + " " + 1);
         } catch (ArrayIndexOutOfBoundsException index) {
-            System.out.println("The vertices does not exists");
+            System.out.println("O vertice não existe!");
         }
     }
 
@@ -52,7 +49,7 @@ public class Aresta extends Vertice {
         try {
             return arestas[to][from];
         } catch (ArrayIndexOutOfBoundsException index) {
-            System.out.println("The vertices does not exists");
+            System.out.println("O vertice não existe!");
         }
         return -1;
     }
