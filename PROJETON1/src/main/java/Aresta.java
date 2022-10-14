@@ -4,7 +4,6 @@ public class Aresta extends Vertice {
     public int[][] arestas;
 
 
-
     public Aresta(int numerodeVertices) {
         super();
         vertices = numerodeVertices;
@@ -113,7 +112,10 @@ public class Aresta extends Vertice {
     }
 
 
-    int verificaAdjacenciaRetornandoCaminhoTest(int v1, int v2, int n) {
+    String verificaAdjacenciaRetornandoCaminhoTest(int v1, int v2, int n) {
+
+
+        int iterador = 0;
 
 /////////////////objetivo caminho do 1  até o 7///////////////////
 ///////////////objetivo caminho do 1  até o 7///////////////////
@@ -135,35 +137,39 @@ public class Aresta extends Vertice {
 //
 //        System.out.println(stringBuilder);
 
+        String resultado = "Caminho percorrido: ";
+
 
         for (int i = v1; i <= n; i++) {
+            if (!verificaSeVerticeSeConectaAAlgum(i, n)) {
+                      System.out.println("ok");
+                break;
+            }
             for (int j = 1; j <= n; j++) {
+
                 if (getAresta2(i, j) == 1) {
 
 
+//                    System.out.printf("%d,%d", i, j);
 
-
-                    System.out.printf("%d,%d",
-                            i, j);
-
-
+                    resultado = resultado + i + ", " + j + " \n ";
 
                     i = j;
-                    System.out.println(" break");
+//                    System.out.println(" break");
 
                     if (!verificaSeVerticeSeConectaAAlgum(j, n) && j != v2) {
-                        System.out.println(j);
-                        System.out.printf(
-                                "o vertice %d se conecta com outro vertice:%b\n"
-                                , j
-                                , verificaSeVerticeSeConectaAAlgum(j, n)
-                        );
+//                        System.out.println(j);
+//                        System.out.printf("o vertice %d se conecta com outro vertice:%b\n", j, verificaSeVerticeSeConectaAAlgum(j, n));
 
 
+                        resultado = "";
                         removePrimeiraArestaAdjacente(v1, n);
                         i = 1;
                         j = 1;
                     }
+
+                    iterador = j;
+
 //                    break;
                 }
 
@@ -172,7 +178,16 @@ public class Aresta extends Vertice {
 
         }
 
+        System.out.println("j aaaaaaaaaaaaaa" + iterador);
+        resultado = "Caminho percorrido: \n " + resultado;
 
-        return 0;
+        if (iterador != v2) {
+            resultado = "Não é possível chegar no vértice nº:"
+                    + v2 + "partindo de vértice" + v1;
+        } else {
+            System.out.println(resultado);
+        }
+
+        return resultado;
     }
 }

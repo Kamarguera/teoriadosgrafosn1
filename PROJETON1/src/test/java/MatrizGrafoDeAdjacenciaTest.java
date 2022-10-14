@@ -145,7 +145,6 @@ public class MatrizGrafoDeAdjacenciaTest {
 
 
 
-        nodo[1].getCodigoDoLocal();
 
 ///////////////objetivo caminho do 1  até o 7///////////////////
         aresta.criaAresta(1, 7);
