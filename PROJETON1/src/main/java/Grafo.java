@@ -4,7 +4,7 @@ public class Grafo extends Vertice {
     public int[][] arestas;
 
 
-    public Grafo(int numerodeVertices) {
+    public Aresta(int numerodeVertices) {
         super();
         vertices = numerodeVertices;
         arestas = new int[vertices + 1][vertices + 1];
@@ -115,79 +115,5 @@ public class Grafo extends Vertice {
     String verificaAdjacenciaRetornandoCaminhoTest(int v1, int v2, int n) {
 
 
-        int iterador = 0;
-
-/////////////////objetivo caminho do 1  até o 7///////////////////
-///////////////objetivo caminho do 1  até o 7///////////////////
-//        aresta.criaAresta(1, 3);
-//        aresta.criaAresta(3, 7);
-//
-//        aresta.criaAresta(1, 2);
-//        aresta.criaAresta(2, 4);
-//        aresta.criaAresta(4, 5);
-
-
-//        StringBuilder stringBuilder = new StringBuilder(100);
-//
-//        stringBuilder.append("Iniciou em " + v1);
-//
-//        System.out.println(stringBuilder);
-//
-//        stringBuilder.append(", " + j);
-//
-//        System.out.println(stringBuilder);
-
-        String resultado = "Caminho percorrido: ";
-
-
-        for (int i = v1; i <= n; i++) {
-            if (!verificaSeVerticeSeConectaAAlgum(i, n)) {
-                      System.out.println("ok");
-                break;
-            }
-            for (int j = 1; j <= n; j++) {
-
-                if (getAresta2(i, j) == 1) {
-
-
-//                    System.out.printf("%d,%d", i, j);
-
-                    resultado = resultado + i + ", " + j + " \n ";
-
-                    i = j;
-//                    System.out.println(" break");
-
-                    if (!verificaSeVerticeSeConectaAAlgum(j, n) && j != v2) {
-//                        System.out.println(j);
-//                        System.out.printf("o vertice %d se conecta com outro vertice:%b\n", j, verificaSeVerticeSeConectaAAlgum(j, n));
-
-
-                        resultado = "";
-                        removePrimeiraArestaAdjacente(v1, n);
-                        i = 1;
-                        j = 1;
-                    }
-
-                    iterador = j;
-
-//                    break;
-                }
-
-            }
-//            break;
-
-        }
-
-        System.out.println("j aaaaaaaaaaaaaa" + iterador);
-        resultado = "Caminho percorrido: \n " + resultado;
-
-        if (iterador != v2) {
-            resultado = "Não é possível chegar no vértice nº:"
-                    + v2 + "partindo de vértice" + v1;
-        } else {
-            System.out.println(resultado);
-        }
-
-        return resultado;
     }
 }
