@@ -7,13 +7,13 @@ public class Grafo extends Vertice {
     public Grafo(int numerodeVertices) {
         super();
         vertices = numerodeVertices;
-        arestas = new int[vertices + 1][vertices + 1];
+        matrizDeArestas = new int[vertices + 1][vertices + 1];
 
     }
 
     public void removeAresta(int to, int from) {
         try {
-            arestas[to][from] = 0;
+            matrizDeArestas[to][from] = 0;
 //            System.out.println(to + " " + from + " " + 1);
         } catch (ArrayIndexOutOfBoundsException index) {
             System.out.println("The vertices does not exists");
@@ -41,7 +41,7 @@ public class Grafo extends Vertice {
 
     public void criaAresta(int to, int from) {
         try {
-            arestas[to][from] = 1;
+            matrizDeArestas[to][from] = 1;
 //            System.out.println(to + " " + from + " " + 1);
         } catch (ArrayIndexOutOfBoundsException index) {
             System.out.println("The vertices does not exists");
@@ -50,7 +50,7 @@ public class Grafo extends Vertice {
 
     public int getAresta(int to, int from) {
         try {
-            return arestas[to][from];
+            return matrizDeArestas[to][from];
         } catch (ArrayIndexOutOfBoundsException index) {
             System.out.println("The vertices does not exists");
         }
@@ -58,7 +58,7 @@ public class Grafo extends Vertice {
     }
 
     public int getAresta2(int to, int from) {
-        return arestas[to][from];
+        return matrizDeArestas[to][from];
 
     }
 
@@ -70,7 +70,7 @@ public class Grafo extends Vertice {
             for (int j = 1; j <= numerodeVertices; j++) {
                 verticeAdjacente = getAresta(vertice1, vertice2) == 1;
 
-                if (arestas[i][j] == 1) {
+                if (matrizDeArestas[i][j] == 1) {
                     System.out.printf("caminho que passou: %d\n", j);
                 }
             }
