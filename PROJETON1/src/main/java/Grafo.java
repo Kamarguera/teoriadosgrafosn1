@@ -1,10 +1,10 @@
 public class Grafo extends Vertice {
 
     private final int vertices;
-    public int[][] arestas;
+    public int[][] matrizDeArestas;
 
 
-    public Aresta(int numerodeVertices) {
+    public Grafo(int numerodeVertices) {
         super();
         vertices = numerodeVertices;
         arestas = new int[vertices + 1][vertices + 1];
