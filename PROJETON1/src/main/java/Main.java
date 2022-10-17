@@ -9,7 +9,7 @@ public class Main {
         String nomeDoLocal, tipoDoLocal;
 
         Scanner sc = new Scanner(System.in);
-        Aresta arestas;
+        Grafo arestas;
         try {
 
             System.out.println("Insira quantidade de vertices: ");
@@ -35,7 +35,7 @@ public class Main {
             System.out.println("Insira numero de arestas: ");
             e = sc.nextInt();
 
-            arestas = new Aresta(v);
+            arestas = new Grafo(v);
 
             System.out.println("Enter the edges: <to> <from>");
             while (count <= e) {

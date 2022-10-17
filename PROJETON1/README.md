@@ -17,7 +17,7 @@ ___
 ### <center>Modelagem</center> 
 
 **1)** Considere o campus FAPA. Selecione 10 lugares, e crie um grafo em que cada lugar é representado
-por um vértice e cada aresta corresponde a uma conexão existente no campus. O grafo proposto não
+por um vértice e cada grafo corresponde a uma conexão existente no campus. O grafo proposto não
 deve ser um dígrafo.
 
 **2)** Faça a representação gráfica do grafo. Para cada vértice, deve-se ter os seguintes dados:

@@ -48,7 +48,7 @@ public class MatrizGrafoDeAdjacenciaTest {
 
     @Test
     public void testVerificaAdjacenciaComDoisVerticesPreviamenteCriados() {
-        Aresta aresta = new Aresta(2);
+        Grafo aresta = new Grafo(2);
 
 
         aresta.criaAresta(1, 2);
@@ -66,7 +66,7 @@ public class MatrizGrafoDeAdjacenciaTest {
     public void testVerificaAdjacenciaComTresVerticesPreviamenteCriados() {
 
         int numerodeVertices = 5;
-        Aresta aresta = new Aresta(numerodeVertices);
+        Grafo aresta = new Grafo(numerodeVertices);
 
 
         aresta.criaAresta(1, 5); //cria aresta do 1 para o 3
@@ -83,7 +83,7 @@ public class MatrizGrafoDeAdjacenciaTest {
     public void testdeveRetornarFalsoSeVerticesNaoSaoAdjacentes() {
 
         int numerodeVertices = 3;
-        Aresta aresta = new Aresta(numerodeVertices);
+        Grafo aresta = new Grafo(numerodeVertices);
 
 
         aresta.criaAresta(1, 3); //cria aresta do 1 para o 3
@@ -99,7 +99,7 @@ public class MatrizGrafoDeAdjacenciaTest {
     public void testVerificaAdjacenciaRetornandoCaminhoComTresVerticesPreviamenteCriados() {
 
         int numerodeVertices = 5;
-        Aresta aresta = new Aresta(numerodeVertices);
+        Grafo aresta = new Grafo(numerodeVertices);
 
 
         aresta.criaAresta(1, 5); //cria aresta do 1 para o 5
@@ -121,7 +121,7 @@ public class MatrizGrafoDeAdjacenciaTest {
 
 
         int numerodeVertices = 10;
-        Aresta aresta = new Aresta(numerodeVertices);
+        Grafo aresta = new Grafo(numerodeVertices);
 
 
         Vertice[] nodo = new Vertice[numerodeVertices];
@@ -144,11 +144,9 @@ public class MatrizGrafoDeAdjacenciaTest {
         }
 
 
-
-
 ///////////////objetivo caminho do 1  até o 7///////////////////
         aresta.criaAresta(1, 7);
-        aresta.criaAresta(7, 10);
+        aresta.criaAresta(7, 9);
 
         aresta.criaAresta(1, 8);
         aresta.criaAresta(8, 9);
@@ -157,27 +155,94 @@ public class MatrizGrafoDeAdjacenciaTest {
         aresta.criaAresta(1, 2);
         aresta.criaAresta(2, 4);
         aresta.criaAresta(4, 5);
+        aresta.criaAresta(4, 6);
+        aresta.criaAresta(4, 7);
+
         aresta.criaAresta(5, 6);
 
         System.out.println(
-                aresta.verificaAdjacenciaRetornandoCaminhoTest(1, 10, numerodeVertices));
+                aresta.verificaAdjacenciaRecursiva(1, 7, numerodeVertices));
     }
 
     @Test
     public void testreverseString() {
-        Aresta aresta = new Aresta(3);
+        Grafo grafo = new Grafo(3);
 
 
-//        aresta.getAresta2(-10 ,-10);
+//        grafo.getAresta2(-10 ,-10);
 //
 ////
 ////        System.out.println(
-////                aresta.reverseString("hello")
+////                grafo.reverseString("hello")
 ////        );
 //
-        System.out.println(aresta.verificaAdjacenciaRetornandoCaminho(1, 2, 2));
+        System.out.println(grafo.verificaAdjacenciaRecursiva(1, 2, 2));
 //        String input = "";
 //        System.out.println(input.substring(1));
+
+    }
+
+
+    @Test
+    public void testretornaOPrimeiroVerticeAoQualUmVerticeSeConecta() {
+
+        int numerodeVertices = 10;
+        Grafo grafo = new Grafo(numerodeVertices);
+
+        ///////////////objetivo caminho do 1  até o 7///////////////////
+        grafo.criaAresta(1, 7);
+        grafo.criaAresta(7, 9);
+
+        grafo.criaAresta(1, 8);
+        grafo.criaAresta(8, 9);
+        ///1 se conecta ao 2 e 2 se conecta ao 5
+
+        grafo.criaAresta(1, 2);
+        grafo.criaAresta(2, 4);
+        grafo.criaAresta(4, 5);
+        grafo.criaAresta(4, 6);
+        grafo.criaAresta(4, 7);
+
+        grafo.criaAresta(5, 6);
+
+
+        System.out.println(grafo.retornaOPrimeiroVerticeAoQualUmVerticeSeConecta(1, numerodeVertices));
+
+
+    }
+
+    @Test
+    public void adjacenciaRecursiva() {
+
+        int numerodeVertices = 10;
+        Grafo grafo = new Grafo(numerodeVertices);
+
+        /////////////objetivo caminho do 1  até o 7///////////////////
+        grafo.criaAresta(1, 7);
+        grafo.criaAresta(7, 9);
+
+        grafo.criaAresta(3, 8);
+        grafo.criaAresta(8, 10);
+        grafo.criaAresta(8, 9);
+        ///1 se conecta ao 2 e 2 se conecta ao 5
+
+        grafo.criaAresta(1, 2);
+        grafo.criaAresta(2, 4);
+        grafo.criaAresta(2, 3);
+        grafo.criaAresta(4, 5);
+        grafo.criaAresta(4, 6);
+        grafo.criaAresta(4, 7);
+
+        grafo.criaAresta(5, 7);
+        grafo.criaAresta(7, 10);
+        grafo.criaAresta(10, 2);
+
+
+
+
+
+        System.out.println(grafo.verificaAdjacenciaRecursiva(3, 3, numerodeVertices));
+
 
     }
 
